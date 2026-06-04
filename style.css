@@ -94,6 +94,12 @@ h2 {
     margin-bottom: 15px;
 }
 
+.project-card .btn {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+}
+
 /* CONTACT */
 .contact {
     text-align: center;
