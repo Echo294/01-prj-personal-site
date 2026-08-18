@@ -77,13 +77,30 @@ h2 {
     border: 1px solid #ddd;
 }
 
-/* PROJECTS */
+/*projects*/
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.projects h2 {
+    grid-column: 1 / -1; /* let the heading span full width */
+    text-align: center;
+}
+
 .project-card {
     background: white;
-    padding: 20px;
-    margin: 20px 0;
+    padding:0 40px;
+    margin: 0;
     border-radius: 8px;
     border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px; /* keeps a consistent rectangular shape */
 }
 
 .project-card h3 {
@@ -92,12 +109,21 @@ h2 {
 
 .project-card p {
     margin-bottom: 15px;
+    flex-grow: 1; /* pushes button to the bottom consistently */
 }
 
 .project-card .btn {
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 0 auto;
+  margin-top: auto; /* sticks to bottom of card */
   width: fit-content;
+}
+
+/* Collapse to 1 column on smaller screens */
+@media (max-width: 700px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* CONTACT */
